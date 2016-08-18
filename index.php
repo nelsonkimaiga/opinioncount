@@ -3,6 +3,13 @@ require 'opinion_poll_model.php';
 
 $model = new Opinion_poll_model();
 
+//check for voter who didnt vote
+if (count($_POST) == 1) {
+
+    echo "<script>alert('You did not vote!');</script>";
+
+}
+
 
 if (count($_POST) > 1) {
 
