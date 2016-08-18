@@ -2,7 +2,7 @@
 
 class Opinion_poll_model {
 
- private $db_handle; private $host = 'localhost'; private $db = 'opinioncount';private $uid = 'root'; private $pwd = '303seminarian';
+ private $db_handle; private $host = '127.0.0.1'; private $db = 'opinioncount';private $uid = 'root'; private $pwd = '303seminarian';
 
     public function __construct() {
 
