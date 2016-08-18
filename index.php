@@ -1,17 +1,43 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title></title>
-    </head>
-    <body>
-        <?php
-        echo 'Yo!';
-        ?>
-    </body>
-</html>
+<?php
+require 'opinion_poll_model.php';
+
+$model = new Opinion_poll_model();
+
+
+if (count($_POST) > 1) {
+
+    $ts = date("Y-m-d H:i:s");
+
+    $option = $_POST['vote'][0];
+
+    $sql_stmt = "INSERT INTO js_libraries (`choice`,`ts`) VALUES ($option,'$ts')";
+
+    $model->insert($sql_stmt);
+
+    $sql_stmt = "SELECT COUNT(choice) choices_count FROM js_libraries;";
+
+    $choices_count = $model->select($sql_stmt);
+
+    $libraries = array("", "JQuery", "MooTools", "YUI Library", "Glow");
+
+    $table_rows = '';
+
+    for ($i = 1; $i < 5; $i++) {
+
+        $sql_stmt = "SELECT COUNT(choice) choices_count FROM js_libraries WHERE choice = $i;";
+
+        $result = $model->select($sql_stmt);
+
+        $table_rows .= "<tr><td>" . $libraries [$i] . " Got:</td><td><b>" . $result[0] . "</b> votes</td></tr>";
+
+    }
+
+    require 'results.html.php';
+
+    exit;
+
+}
+
+require 'opinion.html.php';
+
+?>
