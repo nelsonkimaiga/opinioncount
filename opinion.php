@@ -11,27 +11,40 @@
         <!--fonts-->
         <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
     <body>
-
-        <h2>Opinion Poll</h2>
-
-        <p><b>What is your favorite Code School?</b></p>
-
-        <form method="POST" action="index.php">
-
-            <p> <input type="radio" name="vote" value="1" />Moringa School
-
-                <br /><input type="radio" name="vote" value="2" />Andela
-
-                <br /><input type="radio" name="vote" value="3" />Hack Reactor
-
-                <br /><input type="radio" name="vote" value="4" />Dev School
-
+        <div class="container">
+            <h4 class="bodycontent">Opinion Poll</h4>
+            <h5 class="bodycontent">Where your opinion counts!</h5>
+            <hr>
+            
+            <p>
+                <b>What is your favorite Code School?</b>
             </p>
-
-            <p><input type="submit" name="submitbutton" value="OK" /></p>
-
-        </form>
-        
+            <div class="row">
+                <div class="large-6 columns">
+                    <form method="POST" action="index.php">
+                        <fieldset>
+                            <input type="radio" name="vote" value="1" />Moringa School
+                        </fieldset>
+                        <fieldset>
+                            <input type="radio" name="vote" value="2" />Andela
+                        </fieldset>    
+                        <fieldset>
+                            <input type="radio" name="vote" value="3" />Hack Reactor
+                        </fieldset>
+                        <fieldset>
+                            <input type="radio" name="vote" value="4" />Dev School
+                        </fieldset>
+                        
+                        <button type="submit" class="button primary" name="submitbutton" value="OK" />Submit your opinion</button>
+                    </form>
+                </div>
+                <div class="large-6 columns">
+                    
+                </div>
+                    
+            </div>
+                
+        </div>
         
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script src="js/foundation.js"></script>
