@@ -18,7 +18,7 @@ if (count($_POST) > 1) {
 
     $choices_count = $model->select($sql_stmt);
 
-    $libraries = array("", "Moringa Scool", "Andela", "Hack Reactor", "Dev School");
+    $libraries = array("", "Moringa School", "Andela", "Hack Reactor", "Dev School");
 
     $table_rows = '';
 
